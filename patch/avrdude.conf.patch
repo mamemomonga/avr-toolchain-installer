@@ -1,0 +1,21 @@
+14766a14767,14786
+> #------------------------------------------------------------
+> # ATmega328PB
+> #------------------------------------------------------------
+> part parent "m328"
+>  id        = "m328pb";
+>  desc      = "ATmega328PB";
+>  signature = 0x1e 0x95 0x16;
+>  ocdrev = 1;
+> ;
+> 
+> #------------------------------------------------------------
+> # jtag2updi programmer definitions
+> #------------------------------------------------------------
+> programmer
+>   id    = "jtag2updi";
+>   desc  = "JTAGv2 to UPDI bridge";
+>   type  = "jtagmkii_pdi";
+>   connection_type = serial;
+>   baudrate = 115200;
+> ;
