@@ -16,6 +16,12 @@
 
 5. make を実行
 
+# macOSの場合
+
+macOSの場合は、事前に以下のライブラリを入れておく
+
+	$ brew install libelf libusb libftdi
+
 # 利用方法
 
 以下のコマンドを実行することで、avr-gccが有効になる。
