@@ -58,11 +58,9 @@ tmp/avrdude: download/avrdude
 	cd tmp/avrdude && perl -nlpi.bak -E 's!extra_enable=""!extra_enable="-DCMAKE_INSTALL_PREFIX=$(PREFIX)"!g' build.sh
 	cd tmp/avrdude && ./build.sh
 
-$(PREFIX)/bin/avrdude: tmp/avrdude
-	cd tmp/avrdude && cmake --build build_darwin --target install
+$(PREFIX)/bin/avrdude: avrdude
+	cd avrdude && INSTALL_PREFIX=$(PREFIX) make build install
 
-# darwin: brew install cmake
-# debian: apt-get install cmake bison flex
 
 clean:
 	rm -rf tmp
